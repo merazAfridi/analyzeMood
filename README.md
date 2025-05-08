@@ -1,7 +1,7 @@
 # Mood Analyzer
 ![Results](https://github.com/merazAfridi/analyzeMood/blob/main/static/happysadneutral.png)
 
-A web application that analyzes the mood of text input using sentiment analysis. The application categorizes moods as Happy 😊, Neutral 😐, or Sad 😞.
+A web application that analyzes the mood of text input using sentiment analysis. The application categorizes moods as Happy 😊, Neutral 😐 or Sad 😞.
 
 ## Features
 
