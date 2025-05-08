@@ -1,4 +1,5 @@
 # Mood Analyzer
+![Results](https://github.com/merazAfridi/analyzeMood/blob/main/static/happysadneutral.png)
 
 A web application that analyzes the mood of text input using sentiment analysis. The application categorizes moods as Happy 😊, Neutral 😐, or Sad 😞.
 
@@ -16,31 +17,14 @@ A web application that analyzes the mood of text input using sentiment analysis.
 - Sentiment Analysis: TextBlob
 - Styling: Custom CSS with theme support
 
-## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/merazAfridi/analyzeMood.git
-cd analyzeMood
-```
-
-2. Install the required packages:
-```bash
-pip install -r requirements.txt
-```
-
-3. Run the application:
-```bash
-python app.py
-```
-
-4. Open your browser and navigate to `http://localhost:5000`
 
 ## Usage
 
 1. Enter your text in the input field
 2. Click "Analyze Mood"
 3. The application will display the mood with an appropriate emoji
+
+![Homepage](https://github.com/merazAfridi/analyzeMood/blob/main/Homepage.PNG)
 
 ## Author
 
