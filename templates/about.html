@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Gazi Meraz Mehedi Afridi</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Light Theme */
+            --bg-color: #F9FAFB;
+            --container-bg: #FFFFFF;
+            --text-primary: #111827;
+            --text-secondary: #6B7280;
+            --primary-color: #2563EB;
+            --accent-color: #10B981;
+            --border-color: #E5E7EB;
+            --shadow-color: rgba(0,0,0,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #111827;
+            --container-bg: #1F2937;
+            --text-primary: #F3F4F6;
+            --text-secondary: #9CA3AF;
+            --primary-color: #3B82F6;
+            --accent-color: #22D3EE;
+            --border-color: #374151;
+            --shadow-color: rgba(0,0,0,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            transition: background-color 0.3s, color 0.3s;
+            min-height: 100vh;
+        }
+
+        .nav-container {
+            background: var(--container-bg);
+            padding: 12px 24px;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .theme-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .theme-btn {
+            padding: 6px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--container-bg);
+            color: var(--text-primary);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .theme-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            background: var(--border-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: var(--container-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px var(--shadow-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 16px auto;
+            display: block;
+            border: 3px solid var(--primary-color);
+            background: var(--bg-color);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .info-list {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 600px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .profile-statement {
+            text-align: justify;
+            margin: 0 auto;
+            max-width: 600px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .profile-statement p {
+            margin-bottom: 12px;
+        }
+
+        .profile-statement p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-list strong {
+            color: var(--primary-color);
+        }
+
+        .links {
+            text-align: center;
+            margin: 16px 0;
+        }
+
+        .links a {
+            color: var(--primary-color);
+            margin: 0 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 12px;
+            color: var(--text-secondary);
+            font-size: 12px;
+            background: var(--container-bg);
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="theme-buttons">
+            <button class="theme-btn" onclick="setTheme('light')">Light</button>
+            <button class="theme-btn" onclick="setTheme('dark')">Dark</button>
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about">About Me</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='meraz.jpg') }}" alt="Profile Picture" class="profile-img">
+        <h1>Gazi Meraz Mehedi Afridi</h1>
+        <div class="links">
+            <a href="mailto:meraz.afridi@gmail.com">Email</a> |
+            <a href="https://www.linkedin.com/in/meraz-afridi/" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/merazAfridi" target="_blank">GitHub</a>
+        </div>
+        <p style="text-align: center; margin: 16px 0; font-size: 16px; color: var(--text-secondary);">
+            Research enthusiast in AI, ML, DL, CV & NLP
+        </p>
+
+        <div class="section-title">Profile Statement</div>
+        <div class="profile-statement">
+            <p>Hi! I'm a Computer Science graduate with a strong interest in Artificial Intelligence and its real world 
+                applications. I focus on areas like Machine Learning, Deep Learning, Natural Language Processing, 
+                and Computer Vision. I've worked on a variety of projects involving data science, pattern recognition, 
+                predictive modeling, and image processing. I enjoy solving real problems using smart tech.</p>
+
+            <p>I'm comfortable working with languages like Python, Java, C, C++, JavaScript, PHP, HTML, and SQL. 
+                I also use a bunch of tools and frameworks including TensorFlow, Keras, PyTorch, Scikitlearn, MLflow, 
+                Ollama, Hugging Face, and OpenCV. When it comes to data, I regularly use libraries like NumPy, 
+                Pandas, Matplotlib, Seaborn, and SciPy for analysis and visualization. I've also worked 
+                with cloud platforms and deployment tools like AWS, Google Cloud, and Docker.</p>
+
+            <p>Besides the technical stuff, I'm a good communicator, a team player, and someone who enjoys taking 
+                the lead when needed. I've also managed events and have a creative side; 
+                I love doing graphic design too. I'm always up for learning new things, 
+                working on exciting projects, and teaming up with others to build smart and useful AI solutions.</p>
+        </div>
+
+        <div class="section-title">Experience</div>
+        <div class="info-list">
+            <strong>AI Research Intern</strong><br>
+            mPower Social Enterprises Ltd. (Jan '25–Present)<br>
+            <ul>
+                <li>Developing an AI-driven knowledge management system</li>
+                <li>Conducting stakeholder interviews and gap analysis</li>
+                <li>Implementing GenAI/LLM solutions</li>
+            </ul>
+        </div>
+
+        <div class="section-title">Education</div>
+        <div class="info-list">
+            <strong>North South University</strong><br>
+            B.Sc. in Computer Science and Engineering (CSE)<br>
+            CGPA: 3.57/4.00 (2019–2024)<br>
+            Key Coursework: Computer Engineering Fundamentals, Data Structures and Algorithms, AI, ML, CNN, OOP<br><br>
+            <strong>Bangladesh Air Force Shaheen College, Dhaka</strong><br>
+            Higher Secondary Certificate<br>
+            GPA: 4.75/5.00 (2017–2018)
+        </div>
+
+        <div class="section-title">Skills</div>
+        <div class="info-list">
+            <strong>Programming Languages:</strong> Python, Java, C, C++, JavaScript, PHP, SQL<br>
+            <strong>AI, ML, DL, NLP & CV Tools:</strong> TensorFlow, PyTorch, Keras, Scikit-learn, HuggingFace, OpenCV, Ollama, MLflow<br>
+            <strong>Frameworks & Libraries:</strong> NumPy, Pandas, Matplotlib, Seaborn, SciPy, Streamlit, React, LangChain<br>
+            <strong>Databases & Cloud:</strong> MySQL, MongoDB, Neo4j, Firebase, AWS, Power BI, Docker, Google Cloud
+        </div>
+
+        <div class="section-title">Achievements</div>
+        <div class="info-list">
+            Cum Laude distinction from North South University<br>
+            Shah Cement Presents SSC Bright Star 2016 Award<br>
+            Certificate of Appreciation (Team Leader) - 'Warmth For Everyone'
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Developed by <a href="mailto:meraz.afridi@gmail.com">Gazi Meraz Mehedi</a> | Email: <a href="mailto:meraz.afridi@gmail.com">meraz.afridi@gmail.com</a></p>
+    </footer>
+
+    <script>
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateThemeButtons(theme);
+        }
+
+        function updateThemeButtons(theme) {
+            const buttons = document.querySelectorAll('.theme-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if ((theme === 'light' && btn.textContent === 'Light') ||
+                    (theme === 'dark' && btn.textContent === 'Dark')) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(savedTheme);
+    </script>
+</body>
+</html> 
